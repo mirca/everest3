@@ -35,8 +35,8 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="everest3 3.0.0 documentation" href="index.html"/>
         <link rel="up" title="API" href="api.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="mission.html"/>
-        <link rel="prev" title="target.py" href="containers.html"/> 
+        <link rel="next" title="pld.py" href="pld.html"/>
+        <link rel="prev" title="containers.py" href="containers.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -141,7 +141,7 @@
             
   <span class="target" id="module-everest3.k2"></span><div class="section" id="k2-py">
 <h1>k2.py<a class="headerlink" href="#k2-py" title="Permalink to this headline">¶</a></h1>
-<p>Routines for de-trending <cite>K2</cite> light curves with <code class="xref py py-obj docutils literal"><span class="pre">everest</span></code>.</p>
+<p>Routines for de-trending <cite>K2</cite> light curves with <code class="xref py py-obj docutils literal"><span class="pre">everest3</span></code>.</p>
 <dl class="data">
 <dt id="everest3.k2.path">
 <code class="descclassname">everest3.k2.</code><code class="descname">path</code><em class="property"> = '/home/travis/.everest3/k2'</em><a class="headerlink" href="#everest3.k2.path" title="Permalink to this definition">¶</a></dt>
@@ -157,12 +157,44 @@
 <dl class="class">
 <dt id="everest3.k2.Target">
 <em class="property">class </em><code class="descclassname">everest3.k2.</code><code class="descname">Target</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#everest3.k2.Target" title="Permalink to this definition">¶</a></dt>
-<dd><p>A class that stores all the information, data, attributes, etc. for a <cite>K2</cite>
-target de-trended with <code class="xref py py-obj docutils literal"><span class="pre">everest</span></code>.</p>
+<dd><p>Bases: <a class="reference internal" href="containers.html#everest3.containers.Target" title="everest3.containers.Target"><code class="xref py py-class docutils literal"><span class="pre">everest3.containers.Target</span></code></a></p>
+<p>A class that stores all the information, data, attributes, etc. for a <cite>K2</cite>
+target de-trended with <code class="xref py py-obj docutils literal"><span class="pre">everest3</span></code>.</p>
+<dl class="attribute">
+<dt id="everest3.k2.Target.ID">
+<code class="descname">ID</code><a class="headerlink" href="#everest3.k2.Target.ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-obj docutils literal"><span class="pre">str</span></code> or <code class="xref py py-obj docutils literal"><span class="pre">int</span></code> identifier for this target.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="everest3.k2.Target.cadence">
+<code class="descname">cadence</code><a class="headerlink" href="#everest3.k2.Target.cadence" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-obj docutils literal"><span class="pre">float</span></code> corresponding to the observation cadence in seconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="everest3.k2.Target.detrend">
+<code class="descname">detrend</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#everest3.k2.Target.detrend" title="Permalink to this definition">¶</a></dt>
+<dd><p>De-trend the light curve via <a class="reference internal" href="pld.html#everest3.pld.detrend" title="everest3.pld.detrend"><code class="xref py py-func docutils literal"><span class="pre">everest3.pld.detrend()</span></code></a>.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="everest3.k2.Target.download">
 <code class="descname">download</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#everest3.k2.Target.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads the raw data for this target.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="everest3.k2.Target.lightcurve">
+<code class="descname">lightcurve</code><a class="headerlink" href="#everest3.k2.Target.lightcurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal"><span class="pre">Lightcurve</span></code> object containing the dataset for this target.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="everest3.k2.Target.mag">
+<code class="descname">mag</code><a class="headerlink" href="#everest3.k2.Target.mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <code class="xref py py-obj docutils literal"><span class="pre">float</span></code> corresponding to the magnitude of this target 
+in the mission band.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -177,6 +209,13 @@ target de-trended with <code class="xref py py-obj docutils literal"><span class
 <dd><p>Computes the scatter metric for the light curve.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="everest3.k2.Target.season">
+<code class="descname">season</code><a class="headerlink" href="#everest3.k2.Target.season" title="Permalink to this definition">¶</a></dt>
+<dd><p>An <code class="xref py py-obj docutils literal"><span class="pre">int</span></code> or <code class="xref py py-obj docutils literal"><span class="pre">float</span></code> season/quarter/campaign 
+identifier for this target.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -188,10 +227,10 @@ target de-trended with <code class="xref py py-obj docutils literal"><span class
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mission.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pld.html" class="btn btn-neutral float-right" title="pld.py" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="containers.html" class="btn btn-neutral" title="target.py" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="containers.html" class="btn btn-neutral" title="containers.py" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
