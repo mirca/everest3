@@ -4,7 +4,7 @@
 from __future__ import division, print_function, absolute_import
 from setuptools import setup, find_packages, Extension
 import glob
-    
+
 # Hackishly inject a constant into builtins to enable importing of the
 # module in "setup" mode. Stolen from `kplr`
 import sys

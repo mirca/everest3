@@ -24,7 +24,7 @@ EVEREST_VERSION = __version__
 EVEREST_MAJOR_MINOR = ".".join(EVEREST_VERSION.split(".")[:-1])
 
 #: The top-level :py:obj:`everest` data directory
-EVEREST_DATA_DIR = os.path.expanduser(os.environ.get("EVEREST3_DATA_DIR", os.path.join("~", ".everest3")))                               
+EVEREST_DATA_DIR = os.path.expanduser(os.environ.get("EVEREST3_DATA_DIR", os.path.join("~", ".everest3")))
 if not os.path.exists(EVEREST_DATA_DIR):
     os.mkdir(EVEREST_DATA_DIR)
 
